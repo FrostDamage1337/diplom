@@ -1,0 +1,7 @@
+.won-item-container {
+    display: none;
+}
+
+.won-item-container.active {
+    display: flex;
+}

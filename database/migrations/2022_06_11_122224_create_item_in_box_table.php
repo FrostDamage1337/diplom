@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
+        Schema::create('item_in_box', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
+            $table->unsignedBigInteger('item_id');
+            $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
+            $table->unsignedBigInteger('box_id');
+            $table->foreign('box_id')->references('id')->on('boxes')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('item_in_box');
     }
 };
