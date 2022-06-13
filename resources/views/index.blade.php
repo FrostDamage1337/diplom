@@ -11,7 +11,7 @@
                     <div class="img-wrapper" style="background-image: url('/storage/{{$box->filepath}}')">
                     </div>
                     <span class="box--title">{{ $box->name }}</span>
-                    <span class="box--price">{{ $box->price }}</span>
+                    <span class="box--price">{{ $box->price }}₴</span>
                 </a>
             @endforeach
         </div>

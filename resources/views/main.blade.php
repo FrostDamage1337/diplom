@@ -13,6 +13,9 @@
 
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/app.css">
 
 </head>
@@ -29,7 +32,7 @@
                     {{implode(" ", $errors->all(':message'))}}
                 @endif
             </div>
-            <a href="/" class="logo">Home</a>
+            <a href="/" class="logo"></a>
             <div class="profile">
                 @auth
                     <span class="account_name">{{ auth()->user()->name }}</span>
@@ -47,9 +50,10 @@
             <span>Play and win unlimited amount of items. Beg for your luck</span>
         </div>
     </header>
-    <div class="main">
+    <div class="main @yield('classes')">
         @yield('content')
     </div>
+    @yield('modal')
 </body>
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"

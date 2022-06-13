@@ -31,6 +31,8 @@ class TestController extends BaseController
         $box_id = $request->input('box_id');
         $box = Box::with('items')->find($box_id);
         $box_items = $box->items->pluck('price')->toArray();
+        sort($box_items);
+
         if (!$this->balanceManipulations($box)) {
             return response()->json([
                 'alert' => [
