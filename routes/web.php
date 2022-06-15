@@ -26,7 +26,7 @@ Route::prefix('/auth')->group(function() {
 });
 
 Route::get('/', [BoxesController::class, 'index'])->name('index');
-Route::get('/boxes/{box_id}', [BoxesController::class, 'show'])->name('show');
+Route::get('/boxes/{box}', [BoxesController::class, 'show'])->name('show');
 Route::get('/items', [ItemsController::class, 'index'])->name('items');
 Route::get('/items/sell/{user_item_id}', [ItemsController::class, 'sellItem'])->name('sellItem');
 Route::get('/getBalance', [AuthController::class, 'getBalance'])->name('getBalance');

@@ -17,7 +17,7 @@ class BoxesController extends BaseController
     public function show(Box $box)
     {
         return view('box', [
-            'box' => $box->with('items')->first()
+            'box' => $box
         ]);
     }
 }

@@ -10,6 +10,7 @@
                 <div class="img-wrapper" style="background-image: url('/storage/{{$item->filepath}}')">
                 </div>
                 <span class="item--title">{{ $item->name }}</span>
+                <span class="item--title">{{ $item->type }}</span>
                 <span class="item--price">{{ $item->price }}₴</span>
             </div>
         @endforeach
